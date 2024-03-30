@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
+import PokemonDetails from './details'; // Import PokemonDetails component
 import "../App.css"
 
 interface Pokemon {
@@ -77,7 +78,7 @@ const PokemonSearch: React.FC = () => {
           value={search}
           onChange={handleSearchChange}
         />
-        <ul style={{height:"100vh"}} className="list-group pokemon-list">
+        <ul style={{height:"100vh"}} className="list-group pokemon-list bg-dark-subtle">
           {filteredPokemons.map(pokemon => (
             <li
               className="list-group-item w-50"
@@ -94,19 +95,7 @@ const PokemonSearch: React.FC = () => {
           ))}
         </ul>
       </div>
-      <div className="col-md-6 position-fixed end-0 bg-dark-subtle  d-flex  align-items-start mt-5   justify-content-center  h-100">
-        {pokemonDetails && (
-          <div className=' text-white d-flex w-75   align-items-start  justify-content-center  flex-column '>
-            <h3 className='text-black fs-1  border-bottom  border-dark  '>{pokemonDetails.name}</h3>
-            <img src={pokemonDetails.imageUrl} alt={pokemonDetails.name}  className="pokemon-image text-center" />
-            <p >Height: {pokemonDetails.height}</p>
-            <p>Weight: {pokemonDetails.weight}</p>
-            <p>Abilities: {pokemonDetails.abilities.join(', ')}</p>
-            <p>Types: {pokemonDetails.types.join(', ')}</p>
-            <p>Description: Lorem ipsum dolor sit amet consectetur adipisicing elit. Id, nobis perspiciatis eveniet, blanditiis, sed ea reprehenderit exercitationem necessitatibus ducimus dicta nostrum quidem doloremque ipsam possimus! Sequi non minus maiores ut.</p>
-          </div>
-        )}
-      </div>
+      <PokemonDetails pokemonDetails={pokemonDetails} /> {/* Display PokemonDetails component */}
     </div>
   );
 };
