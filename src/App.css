@@ -1,38 +1,26 @@
-.App {
-  text-align: center;
+/* styles.css (or any other CSS file) */
+@font-face {
+  font-family: "no";
+  src: url("./assets/Luckiest_Guy,Poppins,Press_Start_2P/Luckiest_Guy/LuckiestGuy-Regular.ttf");
+}
+.pokemon-list-container {
+  max-height: 400px; /* Adjust the height as needed */
+  overflow-y: auto;
+}
+li,
+p,
+h1,
+h2,
+h3,
+input::placeholder,
+input {
+  font-family: "no";
+  color: black;
+}
+li {
+  cursor: pointer;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+li:hover {
+  background-color: rgba(0, 0, 0, 0.214);
 }
